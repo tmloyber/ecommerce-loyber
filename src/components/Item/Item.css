@@ -1,0 +1,18 @@
+.card {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.mi-btn {
+    background-color: cadetblue;
+    border: none;
+    color: white !important;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    border-radius: 0;
+}
+
+.mi-btn:hover {
+    background-color: black;
+}

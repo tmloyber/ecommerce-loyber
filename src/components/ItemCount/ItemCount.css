@@ -1,0 +1,42 @@
+.counter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #dadada;
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+}
+
+.counter .btn-container {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: #c4c4c4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter button {
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+
+.counter button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.counter button:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.counter .btn-container:hover {
+    background-color: black;
+}
+
+.counter .btn-container:hover button{
+    color: white;
+}

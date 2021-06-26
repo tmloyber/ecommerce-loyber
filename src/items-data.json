@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Remera Paris",
+        "price": 1500,
+        "imageUrl": "https://img01.ztat.net/article/spp-media-p1/aeb4affa592b3ef98fa5ce4bc64e2fa3/24c3bd8f486a43ab8f1adde6c14347d4.jpg?imwidth=762",
+        "stock": 10
+    },
+    {
+        "id": 2,
+        "name": "Buzo",
+        "price": 2300,
+        "imageUrl": "https://img01.ztat.net/article/spp-media-p1/b99b8898feb845d3beed596de223ea2b/617438c28131424bb3c79acd92503031.jpg?imwidth=762",
+        "stock": 5
+    },
+    {
+        "id": 3,
+        "name": "Camisa",
+        "price": 1800,
+        "imageUrl": "https://img01.ztat.net/article/spp-media-p1/1335b52b472c46a999d1d654a54c9a8a/564c0d9b00ba4c198e58c4e52661d224.jpg?imwidth=762",
+        "stock": 20
+    },
+    {
+        "id": 4,
+        "name": "Remera Budapest",
+        "price": 1500,
+        "imageUrl": "https://img01.ztat.net/article/spp-media-p1/da32b4c3aed046468f2293e8d2eb2cce/86d62f804639453d9f2b5334a4f1214f.jpg?imwidth=762",
+        "stock": 30
+    },
+    {
+        "id": 5,
+        "name": "Campera",
+        "price": 5500,
+        "imageUrl": "https://img01.ztat.net/article/spp-media-p1/eb943e636f1e4cc2b496313c6f8f4617/81304d1036a145c8896a0cc203e93e36.jpg?imwidth=762",
+        "stock": 3
+    },
+    {
+        "id": 6,
+        "name": "Tapado",
+        "price": 4200,
+        "imageUrl": "https://img01.ztat.net/article/spp-media-p1/d0b449ea8ebd442383a00f40665687e5/1e50fe795a1747cba536dc0d3d1d02d2.jpg?imwidth=762",
+        "stock": 50
+    }
+] 
