@@ -1,0 +1,21 @@
+.prod-detail {
+    display: flex;
+    justify-content: space-around;
+}
+
+.prod-detail img {
+    width: 50%;
+}
+
+.prod-detail .info {
+    width: 35%;
+}
+
+.prod-detail .price {
+    margin-top: 1rem;
+}
+
+.prod-detail .description {
+    font-weight: normal;
+    margin: 2rem 0;
+}

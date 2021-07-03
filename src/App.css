@@ -4,7 +4,21 @@ body {
   font-family:'Lato', Helvetica, sans-serif;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .my-container {
   width: 100%;
   margin: auto;
+}
+
+h2.contacto {
+    padding: 2rem calc(7.5% + 15px);
+}
+
+.nav-category {
+  padding: 2rem calc(7.5% + 15px);
+  padding-bottom: 0;
+  font-weight: normal;
 }

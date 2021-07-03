@@ -3,6 +3,14 @@
     margin-bottom: 4rem;
 }
 
+.prod-link:hover img {
+    opacity: 0.6;
+}
+
+.card-body {
+    padding-bottom: 0;
+}
+
 .mi-btn {
     background-color: cadetblue;
     border: none;
@@ -15,4 +23,21 @@
 
 .mi-btn:hover {
     background-color: black;
+}
+
+.carrito {
+    padding: 1.25rem;
+    padding-top: 0;
+}
+
+.carrito:hover p {
+    color: #000000;
+}
+
+a {
+    color: #000000;
+}
+
+a:hover {
+    color: #000000;
 }

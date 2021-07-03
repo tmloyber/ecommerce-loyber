@@ -2,14 +2,20 @@ import React, {useState, useEffect} from 'react';
 import ItemList from '../../components/ItemList/ItemList';
 import './ItemListContainer.css';
 
-function ItemListContainer() {
+function ItemListContainer({category}) {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch('https://mocki.io/v1/c505bb20-e693-4696-bd5f-af43c8392400')
+        fetch('https://mocki.io/v1/1cd48680-a01d-4613-9412-ef82a88839a1')
             .then(response => response.json())
-            .then(json => setItems(json));
-    });
+            .then(json =>  {
+                if (!category) {
+                    setItems(json);
+                } else {
+                    setItems(json.filter(p => p.categoria.toLowerCase() === category));
+                }
+            });
+    }, [category]);
 
     return (
         <div className="items-container">
