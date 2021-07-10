@@ -25,13 +25,12 @@
     background-color: black;
 }
 
-.carrito {
-    padding: 1.25rem;
-    padding-top: 0;
-}
-
-.carrito:hover p {
-    color: #000000;
+.mi-btn:focus, 
+.mi-btn:active, 
+.mi-btn.active {
+    background-color: cadetblue !important;
+    outline: none;
+    box-shadow: none;
 }
 
 a {

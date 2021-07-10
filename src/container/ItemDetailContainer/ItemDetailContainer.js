@@ -1,17 +1,28 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
+import './ItemDetailContainer.css';
+import {ItemsContext} from '../../context/ItemsContext';
 
 function ItemDetailContainer({id}) {
+    const [itemsDatabase] = useContext(ItemsContext);
     const [product, setProduct] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://mocki.io/v1/1cd48680-a01d-4613-9412-ef82a88839a1')
-            .then(response => response.json())
-            .then(json => setProduct(json.find(p => p.id == id)))
-    }, []);
+        setProduct(itemsDatabase.find(p => p.id === parseInt(id)));
+        setLoading(false);
+    }, [id, itemsDatabase]);
+
+    if (loading || !product) {
+        return (
+            <div className="detail-container d-flex justify-content-center">
+                <h3>Cargando...</h3>
+            </div>
+        )
+    }
 
     return (
-        <div className="items-container">
+        <div className="detail-container">
             <ItemDetail product={product} />
         </div>   
     )

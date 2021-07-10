@@ -1,0 +1,33 @@
+.cart-container {
+    width: 65%;
+    margin: auto;
+    padding: 5rem 0;
+}
+
+ion-icon {
+    cursor: pointer;
+}
+
+ion-icon:hover {
+    color: cadetblue;
+}
+
+.mi-btn.secundario {
+    background-color: white;
+    border: 1px solid cadetblue;
+    color: cadetblue !important;
+}
+
+.mi-btn.secundario:hover {
+    border: 1px solid black;
+    color: black !important;
+}
+
+.mi-btn {
+    margin-top: 1.5rem !important;
+}
+
+.cart-img {
+    max-width: 12%;
+    margin-right: 1.5rem;
+}

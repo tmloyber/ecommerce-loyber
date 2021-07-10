@@ -1,3 +1,12 @@
+.carrito {
+    padding: 1.25rem;
+    padding-top: 0;
+}
+
+.carrito:hover p {
+    color: #000000;
+}
+
 .counter {
     display: flex;
     justify-content: space-around;
@@ -15,6 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 0.2rem;
 }
 
 .counter button {

@@ -19,3 +19,14 @@
     font-weight: normal;
     margin: 2rem 0;
 }
+
+#btn-comprar {
+    display: none;
+    margin-top: 1.5rem;
+    background-color: black;
+    color: white;
+}
+
+.prod-detail .carrito {
+    padding: 0;
+}

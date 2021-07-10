@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import './Item.css';
+import {CartContext} from '../../context/CartContext';
 
 function Item({product}) {
+    const {cart, addToCart} = useContext(CartContext);
+
+    const handleAddToCart = quantity => {
+        addToCart(product, quantity);
+    }
+    
+    //console.log(cart);
+
     return (
         <div className="col">
             <div className="card" style={{width: "18rem"}}>
@@ -14,10 +23,7 @@ function Item({product}) {
                         <p className="card-text">${product.price}</p>
                     </div>
                 </Link>
-                <div className="carrito">
-                    <ItemCount stock={product.stock}/>
-                    <a href="#" className="btn btn-primary btn-block mi-btn">Agregar al carrito</a>
-                </div>
+                <ItemCount handleAddToCart={handleAddToCart} stock={product.stock}/>
             </div>
         </div>
     )

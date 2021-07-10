@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import './ItemCount.css';
 
-function ItemCount(stock) {
+function ItemCount({handleAddToCart, stock}) {
     const [quantity, setQuantity] = useState(1);
   
     const handleIncrement = () => {
-        if(quantity < stock.stock) {
+        if(quantity < stock) {
             setQuantity(quantity + 1);
         } else {
             console.log("No hay suficiente stock");
@@ -19,14 +19,17 @@ function ItemCount(stock) {
     };
 
     return (
-        <div className="counter">
-            <div className="btn-container">
-                <button onClick={handleDecrement}>-</button>
+        <div className="carrito">
+             <div className="counter">
+                <div className="btn-container">
+                    <button onClick={handleDecrement}>-</button>
+                </div>
+                <p>{quantity}</p>
+                <div className="btn-container">
+                    <button onClick={handleIncrement}>+</button>
+                </div>
             </div>
-            <p>{quantity}</p>
-            <div className="btn-container">
-                <button onClick={handleIncrement}>+</button>
-            </div>
+            <button className="btn btn-primary btn-block mi-btn" onClick={() => handleAddToCart(quantity)}>Agregar al carrito</button>
         </div>
     )
 }
