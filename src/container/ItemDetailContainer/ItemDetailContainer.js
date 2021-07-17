@@ -1,29 +1,29 @@
 import React, {useState, useEffect, useContext} from 'react';
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
 import './ItemDetailContainer.css';
-import {ItemsContext} from '../../context/ItemsContext';
+import {database} from '../../firebase'; 
 
 function ItemDetailContainer({id}) {
-    const [itemsDatabase] = useContext(ItemsContext);
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setProduct(itemsDatabase.find(p => p.id === parseInt(id)));
-        setLoading(false);
-    }, [id, itemsDatabase]);
-
-    if (loading || !product) {
-        return (
-            <div className="detail-container d-flex justify-content-center">
-                <h3>Cargando...</h3>
-            </div>
-        )
-    }
+        (async() => {
+            const doc = await database.collection("products").doc(id).get();
+            setProduct({...doc.data(), id: doc.id});
+            setLoading(false);
+        })();
+    }, [id]);
 
     return (
         <div className="detail-container">
-            <ItemDetail product={product} />
+            {loading || !product ? (
+                <div className="d-flex justify-content-center">
+                    <h3>Cargando...</h3>
+                </div>
+            ) : (
+                <ItemDetail product={product} />
+            )}
         </div>   
     )
 }

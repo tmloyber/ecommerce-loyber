@@ -19,7 +19,7 @@ function ItemCount({handleAddToCart, stock}) {
     };
 
     return (
-        <div className="carrito">
+        <div className="carrito-counter">
              <div className="counter">
                 <div className="btn-container">
                     <button onClick={handleDecrement}>-</button>

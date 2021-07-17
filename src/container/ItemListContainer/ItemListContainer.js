@@ -1,35 +1,39 @@
 import React, {useState, useEffect, useContext} from 'react';
 import ItemList from '../../components/ItemList/ItemList';
 import './ItemListContainer.css';
-import {ItemsContext} from '../../context/ItemsContext';
+import {database} from '../../firebase'; 
 
 function ItemListContainer({category}) {
-    const [itemsDatabase] = useContext(ItemsContext);
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
+    let itemCollection = database.collection("products");
 
     useEffect(() => {
-        if (!category) {
-            setItems(itemsDatabase);
-        } else {
-            setItems(itemsDatabase.filter(p => p.categoria.toLowerCase() === category));
-        }
-        setLoading(false);
-    }, [category, itemsDatabase]);
-
-    if (loading || !items) {
-        return (
-            <div className="items-container d-flex justify-content-center">
-                <h3>Cargando...</h3>
-            </div>
-        )
-    }
+        (async() => {
+            if(category) {
+                itemCollection = database.collection("products").where("category", "==", category);
+            }
+            const products = [];
+            const response = await itemCollection.get();
+            response.docs.forEach((doc) => {
+                products.push({...doc.data(), id: doc.id});
+            });
+            setItems(products);
+            setLoading(false);
+        })();
+    }, [category]);
 
     return (
         <div className="items-container">
-            <div className="col-12 d-flex justify-content-center">
-                <ItemList products={items} />
-            </div>
+            {loading || !items ? (
+                <div className="d-flex justify-content-center">
+                    <h3>Cargando...</h3>
+                </div>
+            ) : (
+                <div className="col-12 d-flex justify-content-center">
+                    <ItemList products={items} />
+                </div>
+            )} 
         </div>
     )
 }

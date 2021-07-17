@@ -1,9 +1,9 @@
-.carrito {
+.carrito-counter {
     padding: 1.25rem;
     padding-top: 0;
 }
 
-.carrito:hover p {
+.carrito-counter:hover p {
     color: #000000;
 }
 

@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import './Cart.css';
+import {Link} from 'react-router-dom';
 import {CartContext} from '../../context/CartContext';
 
 function Cart() {
@@ -12,7 +13,10 @@ function Cart() {
     if (!cart.length) {
         return (
             <div className="cart-container d-flex justify-content-center">
-                <p>El carrito está vacío.</p>
+                <div>
+                    <p>El carrito está vacío.</p>
+                    <Link to="/" className="btn btn-primary btn-block mi-btn">Volver al inicio</Link>
+                </div>
             </div>
         )
     }

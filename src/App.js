@@ -12,26 +12,23 @@ import Detail from './views/Detail';
 // Components
 import NavBar from './components/NavBar/NavBar';
 import {CartProvider} from './context/CartContext';
-import {ItemsProvider} from './context/ItemsContext';
 import Cart from './components/Cart/Cart';
 
 
 function App() {
     return (
-      <ItemsProvider>
-        <CartProvider>
-          <Router>
-              <NavBar/>
-              <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/contact" component={Contact} />
-                <Route path="/detail/:id" component={Detail} />
-                <Route path="/category/:name" component={Products} />
-                <Route path="/cart" component={Cart} />
-              </Switch>
-          </Router>
-        </CartProvider>
-      </ItemsProvider>
+      <CartProvider>
+        <Router>
+            <NavBar/>
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/detail/:id" component={Detail} />
+              <Route path="/category/:name" component={Products} />
+              <Route path="/cart" component={Cart} />
+            </Switch>
+        </Router>
+      </CartProvider>
     )
 }
 
