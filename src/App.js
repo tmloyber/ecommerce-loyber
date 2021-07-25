@@ -13,6 +13,7 @@ import Detail from './views/Detail';
 import NavBar from './components/NavBar/NavBar';
 import {CartProvider} from './context/CartContext';
 import Cart from './components/Cart/Cart';
+import Checkout from './components/Checkout/Checkout';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Route path="/detail/:id" component={Detail} />
               <Route path="/category/:name" component={Products} />
               <Route path="/cart" component={Cart} />
+              <Route path="/checkout" component={Checkout} />
             </Switch>
         </Router>
       </CartProvider>

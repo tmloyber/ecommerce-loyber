@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import ItemList from '../../components/ItemList/ItemList';
 import './ItemListContainer.css';
 import {database} from '../../firebase'; 

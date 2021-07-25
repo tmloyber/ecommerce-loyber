@@ -53,7 +53,7 @@ function Cart() {
                 </div>
                 <div className="row g-4">
                     <button className="col-6 btn btn-primary btn-block mi-btn secundario" onClick={clearCart}>Vaciar carrito</button>
-                    <button className="col-6 btn btn-primary btn-block mi-btn">Finalizar compra</button>
+                    <Link to="/checkout" className="col-6 btn btn-primary btn-block mi-btn">Finalizar compra</Link>
                 </div>
             </div>
         </div>

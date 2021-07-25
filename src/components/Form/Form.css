@@ -1,0 +1,29 @@
+.mi-btn {
+    background-color: cadetblue;
+    border: none;
+    color: white !important;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    border-radius: 0;
+}
+
+.mi-btn:hover {
+    background-color: black;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.error {
+    color: red;
+}
