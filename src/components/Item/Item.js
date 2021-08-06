@@ -5,16 +5,14 @@ import './Item.css';
 import {CartContext} from '../../context/CartContext';
 
 function Item({product}) {
-    const {cart, addToCart} = useContext(CartContext);
+    const {addToCart} = useContext(CartContext);
 
     const handleAddToCart = quantity => {
         addToCart(product, quantity);
     }
     
-    //console.log(cart);
-
     return (
-        <div className="col">
+        <div className="col-lg-4 col-12">
             <div className="card" style={{width: "18rem"}}>
                 <Link to={`/detail/${product.id}`} className="prod-link">
                     <img src={product.imageUrl} className="card-img-top" alt={product.name}/>

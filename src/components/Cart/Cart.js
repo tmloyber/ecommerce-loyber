@@ -23,7 +23,7 @@ function Cart() {
 
     return (
         <div className="cart-container d-flex justify-content-center">
-            <div className="col-8">
+            <div className="col-md-5 col-12">
                 <div className="row list-group">
                     {cart.map((item) => {
                         return (

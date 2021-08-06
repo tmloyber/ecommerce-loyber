@@ -2,9 +2,11 @@ import React from 'react';
 import './NavBar.css';
 import {Link, useHistory} from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
+import CategoryListContainer from '../../container/CategoryListContainer/CategoryListContainer';
 
 function NavBar() {
     const history = useHistory();
+    const comingFromMenu = true;
 
     const handleCategoryChange = (e) => {
         if (e.target.id) {
@@ -25,17 +27,10 @@ function NavBar() {
                             <Link to="/" className="nav-link" tabIndex="-1" aria-disabled="true">Inicio</Link>
                         </li>
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Productos
                             </a>
-                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <Link to='/category/remeras' id="remeras" className="dropdown-item" onClick={handleCategoryChange}>Remeras</Link>
-                                <Link to='/category/buzos' id="buzos" className="dropdown-item" onClick={handleCategoryChange}>Buzos</Link>
-                                <Link to='/category/camperas' id="camperas" className="dropdown-item" onClick={handleCategoryChange}>Camperas</Link>
-                            </ul>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/contact" className="nav-link" tabIndex="-1" aria-disabled="true">Contacto</Link>
+                            <CategoryListContainer comingFromMenu={comingFromMenu} handleCategoryChange={handleCategoryChange} />
                         </li>
                     </ul>
                 </div>

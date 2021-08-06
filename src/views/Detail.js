@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css';
 import ItemDetailContainer from '../container/ItemDetailContainer/ItemDetailContainer';
 
 function Detail ({match}) {

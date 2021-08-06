@@ -1,17 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import ItemList from '../../components/ItemList/ItemList';
 import './ItemListContainer.css';
+import Spinner from '../../components/Spinner/Spinner';
 import {database} from '../../firebase'; 
 
-function ItemListContainer({category}) {
+function ItemListContainer({categoryId}) {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     let itemCollection = database.collection("products");
 
     useEffect(() => {
         (async() => {
-            if(category) {
-                itemCollection = database.collection("products").where("category", "==", category);
+            if (categoryId) {
+                const categoryRef = database.collection('categories').doc(categoryId);
+                itemCollection = database.collection("products").where("category", "==", categoryRef);
             }
             const products = [];
             const response = await itemCollection.get();
@@ -21,16 +23,16 @@ function ItemListContainer({category}) {
             setItems(products);
             setLoading(false);
         })();
-    }, [category]);
+    }, [categoryId]);
 
     return (
         <div className="items-container">
             {loading || !items ? (
                 <div className="d-flex justify-content-center">
-                    <h3>Cargando...</h3>
+                    <Spinner />
                 </div>
             ) : (
-                <div className="col-12 d-flex justify-content-center">
+                <div className="col-md-12 col-12 d-flex justify-content-center">
                     <ItemList products={items} />
                 </div>
             )} 

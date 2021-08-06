@@ -1,29 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Form.css';
 import {useForm} from "react-hook-form";
 
 function Form({handleFinishOrder}) {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         handleFinishOrder(data);
         //document.getElementById("myForm").reset();
     };
-
-    /*
-    const initialState = {name: '', lastName: '', phone: '', email:''};
-
-    const [values, setValues] = useState(initialState);
-
-    const handleOnChange = (e) => {
-        const {name, value} = e.target;
-        setValues({...values, [name]: value});
-    } 
-
-    const handleOnSubmit = (e) => {
-        e.preventDefault();
-        //handleFinishOrder(values);
-        setValues({...initialState});
-    } */
 
     return (
         <form id="myForm" onSubmit={handleSubmit(onSubmit)}>

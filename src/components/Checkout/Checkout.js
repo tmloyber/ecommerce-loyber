@@ -1,6 +1,7 @@
 import React, {useContext, useState} from 'react';
 import './Checkout.css';
 import Form from '../Form/Form';
+import Spinner from '../../components/Spinner/Spinner';
 import {CartContext} from '../../context/CartContext';
 import {Link} from 'react-router-dom';
 import firebase from 'firebase/app';
@@ -55,7 +56,7 @@ function Checkout() {
     if (!orderFinished && !loading) {
         return (
             <div className="col-12 d-flex justify-content-center">
-                <div className="col-4 content">
+                <div className="col-md-4 col-12 content">
                     <h2>Checkout</h2>
                     <p className="datos">Ingresa tus datos para realizar el pedido.</p>
                     <Form handleFinishOrder={handleFinishOrder} />
@@ -65,13 +66,13 @@ function Checkout() {
     } else if (!orderFinished && loading) {
         return (
             <div className="container d-flex justify-content-center">
-                <h3>Cargando...</h3>
+                <Spinner />
             </div>
         )
     } else {
         return (
             <div className="col-12 d-flex justify-content-center">
-                <div className="col-4 content">
+                <div className="col-md-4 col-12 content">
                     <h2>Gracias por tu compra!</h2>
                     <p className="datos">Tu número de orden es {orderId}</p>
                     <Link to="/" className="btn btn-primary btn-block mi-btn">Volver al inicio</Link>
