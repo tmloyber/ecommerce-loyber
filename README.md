@@ -2,7 +2,7 @@
 
 Wander es una página e-commerce del rubro de indumentaria. El proyecto fue desarrollado durante el curso de React Js de Coderhouse.
 
-![gif wander](%PUBLIC_URL%/wander.gif)
+![gif wander](https://github.com/tmloyber/ecommerce-loyber/blob/main/public/wander.gif)
 ## Pasos para correr en local
 
 * Clonar de [https://github.com/tmloyber/ecommerce-loyber](https://github.com/tmloyber/ecommerce-loyber)
